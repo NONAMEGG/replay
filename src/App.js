@@ -3,22 +3,29 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className='top__header'>
+        хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй  
       </header>
-    </div>
+      <header className='fixed__header'>
+      <div>ghost::logo</div>
+        <ul className='header__menu'>
+          <li><a href="#"> menuitems</a></li>
+          <li><a href="#"> menuitems</a></li>
+          <li><a href="#"> menuitems</a></li>
+          <li><a href="#"> menuitems</a></li>
+        </ul>
+        <div>profile</div>
+      </header>
+      кркркркркря
+      <div className='main'></div>
+      <div className="player__container">
+        <div className="player">
+          
+        </div>
+
+      </div>
+    </>
   );
 }
 

@@ -13,6 +13,10 @@
   }
 }
 
+.jjjj {
+  font-size: 40px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +39,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+.top__header {
+  height: 5vh;
+  background-color: #bd0000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed__header {
+  height: 6vh;
+  background-color: #282c34;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  padding: 0px 30px 0px 30px;
+}
+
+.header__menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header__menu li {
+  float: left;
+  margin-right: 40px;
+  background-color: #333;
+}
+
+.header__menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main {
+  
+}
+
+.player__container {
+  height: 9vh;
+  position: fixed; 
+  bottom:0%;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
