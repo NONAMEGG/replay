@@ -9,16 +9,25 @@
     min-height: 100vh;
 }
 .inputs_Login{
-    margin-top: 5%;
+    margin-top: 1%;
 }
 .input_Login{
+    text-align: center;
+    margin-bottom: 20px;
     background-color: #FFB4A2;
-    margin-bottom: 1%;
+    width: 400px;
+    padding: 10px;
     font-size: 20px;
+    border: 2px solid #6D6875;
+    border-radius: 10px;
+}
+.input_Login:hover{
+    border: 2px solid #E5989B;
 }
 .button_Login{
     padding: 20px 50px 20px 50px;
-    border: 2px solid;
+    background-color: #FFB4A2;
+    border: 2px solid #6D6875;
     border-radius: 5px;
     margin-bottom: 200px;
 }
