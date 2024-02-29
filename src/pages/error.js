@@ -1,7 +1,7 @@
 const Error=() => {
     return (
         <>
-            404 :(:(:(:(:(:(:(:(:(:(
+            Error 404. The page was not found
         </>
     )
 }
