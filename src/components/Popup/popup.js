@@ -5,12 +5,12 @@ import './popup.css'
 
 const popup =() => {
     const ShowPopup = () =>{
-        React.Children.toArray(this.props.children).filter((item) => item.props.className === 'Popup_background').style.display = "block";
-        React.Children.toArray(this.props.children).filter((item) => item.props.className === 'main_Popup').style.display = "block";
+        document.getElementsByClassName("Popup_background").style.display = "block";
+        document.getElementsByClassName("main_Popup").style.display = "block";
     }
     const HidePopup = () => {
-        React.Children.toArray(this.props.children).filter((item) => item.props.className === 'Popup_background').style.display = "none";
-        React.Children.toArray(this.props.children).filter((item) => item.props.className === 'main_Popup').style.display = "none";
+        document.getElementsByClassName("Popup_background").style.display = "none";
+        document.getElementsByClassName("main_Popup").style.display = "none";
     }
     return (
         <>
