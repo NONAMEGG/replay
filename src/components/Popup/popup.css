@@ -6,6 +6,9 @@
     max-width: 100px;
     opacity: 1;
 }
+.activePopup{
+    display: block;
+}
 .Popup_background{
     display: block;
     position: absolute;
@@ -14,4 +17,8 @@
     opacity: 0.6;
     min-width: 100dvw;
     min-height: 100dvh;
+}
+
+.Popup_background.activePopup {
+    display: none;
 }

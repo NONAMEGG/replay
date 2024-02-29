@@ -1,7 +1,9 @@
 import './style.css'
-import ShowPopup from '../Popup/popup.js'
+import '../Popup/popup.js'
+import { useState } from 'react';
 
-const DisplayTrack = ( { currentTrack, audioRef, setDuration, progressBarRef } ) => {
+
+const DisplayTrack = ( { currentTrack, audioRef, setDuration, progressBarRef, active, setActive } ) => {
 
   const onLoadedMetadata = () => {
     const seconds = audioRef.current.duration;
@@ -9,9 +11,13 @@ const DisplayTrack = ( { currentTrack, audioRef, setDuration, progressBarRef } )
     progressBarRef.current.max = seconds;
   };
 
+  const changeState =() => {
+    setActive((prev) => !prev)
+console.log(active)
+  }
     return (
       <>
-      <div className='dtrack' onClick={ShowPopup}>
+      <div className='dtrack' onClick={changeState}>
         <audio src={currentTrack.src} ref={audioRef} onLoadedMetadata={onLoadedMetadata} />
         <div className="audio_info">
           <div className="audio_image">

@@ -8,7 +8,7 @@ const DisplayTrack = React.lazy(() => import('./displaytrack'))
 const ProgressBar = React.lazy(() => import('./progressbar'))
 
 
-const Player =() => {
+const Player =({active, setActive}) => {
     const [trackIndex, setTrackIndex] = useState(0);
     const audioRef = useRef()
     const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
@@ -22,7 +22,7 @@ const Player =() => {
             <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration }}></ProgressBar>
 
                 <div className="player">
-                    <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef }}/> 
+                    <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef, active, setActive }}/> 
                     <Controls {...{ audioRef, progressBarRef, duration, setTimeProgress, tracks,
     trackIndex,
     setTrackIndex,
