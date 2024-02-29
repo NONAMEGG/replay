@@ -1,0 +1,17 @@
+.main_Popup{
+    display: block;
+    position: absolute;
+    z-index: 10000000000;
+    background-color: #E5989B;
+    max-width: 100px;
+    opacity: 1;
+}
+.Popup_background{
+    display: block;
+    position: absolute;
+    z-index: 999999999;
+    background-color: black;
+    opacity: 0.6;
+    min-width: 100dvw;
+    min-height: 100dvh;
+}

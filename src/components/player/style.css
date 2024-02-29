@@ -24,6 +24,10 @@
 .dtrack {
     width: 33%;
     margin-left: 30px;
+    padding: 1% 0px 1% 1%;
+}
+.dtrack:hover{
+    background-color: rgb(39, 38, 38);
 }
 
 .player {
