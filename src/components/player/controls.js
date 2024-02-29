@@ -89,6 +89,12 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
   return (
     <div className="controls_wrapper">
       <div className="controls">
+      <div className="volume_container">
+      <input type="range" min={0} max={100} value={volume}
+  onChange={(e) => setVolume(e.target.value)} style={{
+    background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`, width: `50px`, transform: `rotate(-45deg)`, 
+  }} />
+  </div>
         <button onClick={handlePrevious}>
         <img src="/icons/PrevTreck.png" alt="" />
         </button>
@@ -107,12 +113,14 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
         <img src="/icons/NextTreck.png" alt="" />
 
         </button>
-        
-      </div>
+        <div className="volume_container">
       <input type="range" min={0} max={100} value={volume}
   onChange={(e) => setVolume(e.target.value)} style={{
-    background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
+    background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`, width: `50px`, transform: `rotate(45deg)`, 
   }} />
+  </div>
+      </div>
+      
     </div>
   );
 };

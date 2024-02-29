@@ -12,7 +12,7 @@ const DisplayTrack = ( { currentTrack, audioRef, setDuration, progressBarRef } )
     return (
       <>
       <div className='dtrack' onClick={ShowPopup}>
-        <audio src={currentTrack.src} ref={audioRef} onLoadedMetadata={onLoadedMetadata} />
+        <audio src={currentTrack.src} ref={audioRef} onLoadedMetadata={onLoadedMetadata}/>
         <div className="audio_info">
           <div className="audio_image">
             {currentTrack.thumbnail ? (

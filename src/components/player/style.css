@@ -22,10 +22,22 @@
 }
 
 .dtrack {
-    width: 33%;
+    margin: 10px;
+    width: 33dvw;
     margin-left: 30px;
-    padding: 1% 0px 1% 1%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
 }
+
+.controls {
+    display: flex;
+    align-items: center;
+    width: 33dvw;
+    justify-content: center;
+}
+
 .dtrack:hover{
     background-color: rgb(39, 38, 38);
 }
@@ -37,8 +49,7 @@
 }
 
 .controls_wrapper {
-    width: 33%;
-    text-align: center;
+    width: 33dvw;
 }
 
 button {
@@ -46,19 +57,27 @@ button {
     border: none;
 }
 
+.time {
+    padding: 0px 10px;
+}
+
 .progress {
+    background-color: aqua;
+    border: 1px solid #000;
+    border-radius: 15px 15px 0px 0px;
+    
     position: absolute;
-    margin-top: -40px;
+    margin-top: -24px;
+    width: 100%;
     display: flex;
     align-items: center;
-    width: 50%;
-    left: 300px;
     justify-content: center;
 
 }
 
 .ghost {
-    width: 33%;
+        width: 33dvw;
+
     height: 100%;
     margin-left: 30px;
 
