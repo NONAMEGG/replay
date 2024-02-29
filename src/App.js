@@ -11,7 +11,7 @@ const router = createBrowserRouter(
   [
     {
       path: '/', element:<Suspense fallback={<div>loading////</div>}><Root/></Suspense>,
-      errorElement: <Suspense fallback={<div>loading////</div>}><Error/>Залупа</Suspense>,
+      errorElement: <Suspense fallback={<div>loading////</div>}><Error/></Suspense>,
       children: 
       [
         {path: '/', element:<Suspense fallback={<div>loading////</div>}><Home/></Suspense>},
@@ -24,7 +24,7 @@ const router = createBrowserRouter(
 function App() {
   return(
     <>
-    <RouterProvider router={router}>hui</RouterProvider>
+    <RouterProvider router={router}></RouterProvider>
     </>
   ) 
 
