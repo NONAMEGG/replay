@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import { useState } from 'react';
-import { tracks } from 'C:/replay/src/data/tracks';
+import { tracks } from '../data/tracks';
 import './style.css'
 
 const Controls = React.lazy(() => import('./controls'))
