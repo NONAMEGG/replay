@@ -8,14 +8,14 @@ const Login =() => {
         <Suspense fallback={<div>Loading/////</div>}>
         </Suspense>
         <div className='main'>
-            <img src={"/icons/LOGO.png"} className='logo'/><br></br>
+            <img src={"/icons/LOGO.png"} className='logo_login'/><br></br>
             <div className='inputs'>
                 <p>Логин:</p>
-                <input type='text'></input><br></br>
+                <input className='input_Login' type='text'></input><br></br>
                 <p>Пароль:</p>
-                <input type='text'></input>
+                <input className='input_Login' type='text'></input>
             </div>
-            <button>Войти</button>
+            <button className='button_Login'>Войти</button><br></br>
             <Link className='RegisterP'>Регистрация</Link>
         </div>
     </>
