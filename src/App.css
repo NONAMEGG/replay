@@ -43,7 +43,6 @@
   }
 }
 .top__header {
-  height: 5vh;
   background-color: #000;
   color: #fff;
   display: flex;
@@ -84,7 +83,7 @@
 }
 
 .logo {
-  width: 100px;
-  height: 4vh;
+  width: 240px;
+  height: 50px;
 }
 
