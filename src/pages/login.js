@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-import { Link } from 'react-router-dom'
 
 const Header = React.lazy(() => import('../components/header'))
 
