@@ -11,6 +11,15 @@
     background-color: #000;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: #fff;
   }
+
+  img {
+    width: 40px;
+    height: 40px;
+}
+
+button {
+    background: none;
+    border: none;
+}

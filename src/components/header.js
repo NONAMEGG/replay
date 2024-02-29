@@ -8,8 +8,7 @@ const Header =() => {
     return (
         <>
 <header className='top__header'>
-            хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй
-            хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй
+            <img src= { "/icons/LOGO.png" } alt="dksfskjdf" className="logo" />
         </header><header className='fixed__header'>
                 <div>ghost::logo</div>
                 <Suspense fallback={<div>Loading/////</div>}>

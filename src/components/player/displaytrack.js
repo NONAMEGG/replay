@@ -1,6 +1,6 @@
 import './style.css'
 
-const DisplayTrack = () => {
-    return <div>DisplayTrack content here</div>
+const DisplayTrack = ( {currentTrack, audioRef} ) => {
+    return <audio src={currentTrack.src} ref={audioRef}/>
   }
   export default DisplayTrack
