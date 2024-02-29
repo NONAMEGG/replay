@@ -35,3 +35,14 @@
 .checkboxes p{
     margin:0;
 }
+.button_Register{
+    padding: 20px 50px 20px 50px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 200px;
+}
+.button_Register:hover{
+    background-color: #E5989B;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
