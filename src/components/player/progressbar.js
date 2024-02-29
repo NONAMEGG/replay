@@ -2,7 +2,7 @@ import './style.css'
 import './customize-progress-bar.css'
 const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
   const handleProgressChange = () => {
-    console.log(progressBarRef.current.value);
+    audioRef.current.currentTime = progressBarRef.current.value;
   };
 
   const formatTime = (time) => {
@@ -13,6 +13,7 @@ const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
       const seconds = Math.floor(time % 60);
       const formatSeconds =
         seconds < 10 ? `0${seconds}` : `${seconds}`;
+
       return `${formatMinutes}:${formatSeconds}`;
     }
     return '00:00';
@@ -20,11 +21,11 @@ const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
 
   return (
     <div className="progress">
-      <span className="time current">{formatTime({timeProgress})}</span>
+      <span className="time current">{formatTime(timeProgress)}</span>
       <input type="range" ref={progressBarRef}
       defaultValue="0"
-        onChange={handleProgressChange} />
-      <span className="time">{formatTime({duration})}</span>
+        onChange={handleProgressChange}/>
+      <span className="time">{formatTime(duration)}</span>
     </div>
   )
 }
