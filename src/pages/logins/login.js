@@ -16,7 +16,7 @@ const Login =() => {
                 <input className='input_Login' type='text'></input>
             </div>
             <button className='button_Login'>Войти</button><br></br>
-            <Link className='RegisterP'>Регистрация</Link>
+            <Link className='RegisterP' to="/register">Регистрация</Link>
         </div>
     </>
     )
