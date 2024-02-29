@@ -9,8 +9,6 @@
     bottom:0%;
     width: 100%;
     background-color: #000;
-    display: flex;
-    justify-content: center;
     color: #fff;
   }
 
@@ -19,7 +17,49 @@
     height: 40px;
 }
 
+.audio_info {
+    display: flex;
+}
+
+.dtrack {
+    width: 33%;
+    margin-left: 30px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.controls_wrapper {
+    width: 33%;
+    text-align: center;
+}
+
 button {
     background: none;
     border: none;
+}
+
+.progress {
+    position: absolute;
+    margin-top: -40px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    left: 300px;
+    justify-content: center;
+
+}
+
+.ghost {
+    width: 33%;
+    height: 100%;
+    margin-left: 30px;
+
+}
+
+.text {
+    margin-left: 15px;
 }

@@ -20,7 +20,7 @@ const Controls = ({ audioRef }) => {
   }, [isPlaying, audioRef]);
 
   return (
-    <div className="controls-wrapper">
+    <div className="controls_wrapper">
       <div className="controls">
         <button>
         <img src="/icons/PrevTreck.png" alt="" />
