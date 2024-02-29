@@ -1,4 +1,6 @@
 import React, { Suspense } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Navigation = React.lazy(() => import('../components/navigation'))
 
@@ -13,7 +15,7 @@ const Header =() => {
                 <Suspense fallback={<div>Loading/////</div>}>
                 <Navigation></Navigation>
                 </Suspense>
-                <div>profile</div>
+                <Link className='profile' to="/account">profile</Link>
             </header>
         </>
     )
