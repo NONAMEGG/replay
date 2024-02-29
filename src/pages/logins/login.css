@@ -1,0 +1,30 @@
+.logo{
+    width: 75%;
+    height: 50%;
+    margin-top: 5%;
+}
+*{
+    background-color: #FFCDB2;
+}
+.main{
+    text-align: center;
+}
+.inputs{
+    margin-top: 5%;
+}
+input{
+    background-color: #FFB4A2;
+    margin-bottom: 1%;
+    font-size: 20px;
+}
+button{
+    padding: 20px 50px 20px 50px;
+}
+button:hover{
+    background-color: #E5989B;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+.RegisterP{
+    margin-top: 2%;
+}
