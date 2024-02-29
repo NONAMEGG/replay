@@ -40,12 +40,6 @@
     transform: rotate(360deg);
   }
 }
-
-* {
-  margin: 0;
-  padding: 0; 
-}
-
 .top__header {
   height: 5vh;
   background-color: #bd0000;
@@ -87,13 +81,3 @@
   
 }
 
-.player__container {
-  height: 9vh;
-  position: fixed; 
-  bottom:0%;
-  width: 100%;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

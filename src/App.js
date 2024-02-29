@@ -1,32 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import './App.css'
+
+const Home = React.lazy(() => import('./pages/home'))
+const Login = React.lazy(() => import('./pages/login'))
+const Error = React.lazy(() => import('./pages/error'))
+const Root = React.lazy(() => import('./components/root'))
+
+const router = createBrowserRouter(
+  [
+    {
+      path: '/', element:<Suspense fallback={<div>loading////</div>}><Root/></Suspense>,
+      errorElement: <Suspense fallback={<div>loading////</div>}><Error/></Suspense>,
+      children: 
+      [
+        {path: '/', element:<Suspense fallback={<div>loading////</div>}><Home/></Suspense>},
+        {path: '/login', element:<Suspense fallback={<div>loading////</div>}><Login/></Suspense>}
+      ]
+    }
+  ]
+)
 
 function App() {
-return (
-<>
-  <header className='top__header'>
-    хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй
-    хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй хуй
-  </header>
-  <header className='fixed__header'>
-    <div>ghost::logo</div>
-    <ul className='header__menu'>
-      <li><a href="#"> menuitems</a></li>
-      <li><a href="#"> menuitems</a></li>
-      <li><a href="#"> menuitems</a></li>
-      <li><a href="#"> menuitems</a></li>
-    </ul>
-    <div>profile</div>
-  </header>
-  <div className='main'></div>
-  <div className="player__container">
-    <div className="player">
-      
-    </div>
+  return(
+    <>
+    <RouterProvider router={router}></RouterProvider>
+    </>
+  ) 
 
-  </div>
-</>
-);
 }
 
-export default App;
+export default App
