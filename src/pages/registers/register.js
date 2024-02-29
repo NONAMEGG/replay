@@ -8,45 +8,43 @@ const Login =() => {
         <Suspense fallback={<div>Loading/////</div>}>
         </Suspense>
         <div className='main_Register'>
-            <img src={"/icons/LOGO.png"} className='logo_register'/><br></br>
-            <div className='all_set'>
-                <div className='inputs_Register'>
-                    <p>Придумайте логин:</p>
-                    <input className='input_Register' type='text'></input>
-                    <br></br>
-                    <p>Придумайте пароль:</p>
-                    <input className='input_Register' type='text'></input>
-                    <br></br>
-                    <p>Выберите дату рождения:</p>
-                    <input className='input_Register' type='date'></input>
-                    <br></br>
-                </div>
-                <div className='inputs_Register'>
-                    <p>Выберите пол:</p>
-                    <div>Мужской<input type='radio' name='pol'></input></div>
-                    <div>Женский<input type='radio' name='pol'></input></div>
-                    <br></br>
-                    <p>Выберите какую музыку вы предпочитаете:</p>
-                    <div className='checkboxes'>
-                        <p>Эпическую</p>
-                        <input type='checkbox'></input>
-                        <p>Нагнитающую</p>
-                        <input type='checkbox'></input>
-                        <p>Расслабляющую</p>
-                        <input type='checkbox'></input>
-                        <p>8-bit</p>
-                        <input type='checkbox'></input>
-                        <p>Энергичную</p>
-                        <input type='checkbox'></input>
-                        <p>Грустную</p>
-                        <input type='checkbox'></input>
-                        <p>Весёлую</p>
-                        <input type='checkbox'></input>
-                        <p>Агрессивный фонк</p>
-                        <input type='checkbox'></input>
+            <img src={"/icons/LOGO4K.png"} className='logo_register'/><br></br>
+            <div className='container'>
+                <div className='all_set'>
+                    <div className='inputs_Register'>
+                        <p>Придумайте логин:</p>
+                        <input className='input_Register' type='text'></input>
+                        <br></br>
+                        <p>Придумайте пароль:</p>
+                        <input className='input_Register' type='text'></input>
+                        <br></br>
+                        <p>Выберите дату рождения:</p>
+                        <input className='input_Register' type='date'></input>
+                        <br></br>
+                    </div>
+                    <div className='inputs_Register'>
+                        <p>Выберите пол:</p>
+                        <div className='RadioButtons_Register_pol'>
+                            <div>Мужской<input type='radio' name='pol'></input></div>
+                            <div>Женский<input type='radio' name='pol'></input></div>
+                        </div>
+                        <br></br>
+                        <p>Выберите какую музыку вы предпочитаете:</p>
+                        <div className='checkboxes_registers_likes'>
+                            <button className='Checkboxs'>Эпическую</button>
+                            <button className='Checkboxs'>Нагнетающую</button>
+                            <button className='Checkboxs'>Расслабляющую</button>
+                            <button className='Checkboxs'>8-bit</button>
+                            <button className='Checkboxs'>Энергичную</button>
+                            <button className='Checkboxs'>Грустную</button>
+                            <button className='Checkboxs'>Весёлую</button>
+                            <button className='Checkboxs'>Агрессивный фонк</button>
+                        </div>
                     </div>
                 </div>
+                <button className='button_register'>Зарегестрироваться</button>
             </div>
+            <Link className='RegisterP' to="/login">У меня уже есть аккаунт</Link>
         </div>
     </>
     )

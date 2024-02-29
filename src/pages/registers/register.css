@@ -10,9 +10,9 @@
     padding: 10px;
     font-size: 20px;
     border: 2px solid #6D6875;
+    border-radius: 10px;
 }
 .input_Register:hover{
-    border-radius: 10px;
     border: 2px solid #E5989B;
 }
 .logo_register{
@@ -28,9 +28,8 @@
 .all_set{
     display: flex;
     flex-direction: row;
-}
-.all_set{
     margin-left: 30%;
+    margin-bottom: 1%;
 }
 .checkboxes p{
     margin:0;
@@ -45,4 +44,46 @@
     background-color: #E5989B;
     transition-property: background-color;
     transition-duration: 1s;
+}
+.RadioButtons_Register_pol{
+    border: 2px solid #6D6875;
+    border-radius: 10px;
+    max-width: 22%;
+    padding: 4px;
+    margin-left: 39%;
+}
+.checkboxes_registers_likes{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+.Checkboxs{
+    min-width: 124px;
+    max-width: 124px;
+    min-height: 50px;
+    max-height: 50px;
+
+    margin: 0 1px 1px 0;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    background-color: #E5989B;
+}
+.Checkboxs:active{
+    background-color: #FFB4A2;
+}
+.button_register{
+    padding: 20px 50px 20px 50px;
+    background-color: #FFB4A2;
+    border: 2px solid #6D6875;
+    border-radius: 5px;
+}
+.button_register:hover{
+    background-color: #E5989B;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+.container{
+    margin-bottom: 2%;
 }
