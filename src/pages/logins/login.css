@@ -1,14 +1,14 @@
-.logo_login{
+.logo_Login{
     width: 75%;
     height: 50%;
     margin-top: 5%;
 }
-.main{
+.main_Login{
     text-align: center;
     background-color: #FFCDB2;
     min-height: 100vh;
 }
-.inputs{
+.inputs_Login{
     margin-top: 5%;
 }
 .input_Login{

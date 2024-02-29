@@ -7,9 +7,9 @@ const Login =() => {
         <>
         <Suspense fallback={<div>Loading/////</div>}>
         </Suspense>
-        <div className='main'>
-            <img src={"/icons/LOGO.png"} className='logo_login'/><br></br>
-            <div className='inputs'>
+        <div className='main_Login'>
+            <img src={"/icons/LOGO.png"} className='logo_Login'/><br></br>
+            <div className='inputs_Login'>
                 <p>Логин:</p>
                 <input className='input_Login' type='text'></input><br></br>
                 <p>Пароль:</p>
