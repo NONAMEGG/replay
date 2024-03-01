@@ -19,6 +19,8 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
   const [muteVolume, setMuteVolume] = useState(false);
 
   const repeat = useCallback(() => {
+    if (audioRef.current) {
+
     const currentTime = audioRef.current.currentTime;
     setTimeProgress(currentTime);
     progressBarRef.current.value = currentTime;
@@ -28,6 +30,7 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
     );
 
     playAnimationRef.current = requestAnimationFrame(repeat);
+    }
   }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
 
@@ -52,11 +55,16 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
 
   
   const skipForward = () => {
-    audioRef.current.currentTime += 15;
+    if (audioRef.current) {
+      audioRef.current.currentTime += 15;
+
+    }
   };
   
   const skipBackward = () => {
-    audioRef.current.currentTime -= 15;
+    if (audioRef.current) {
+      audioRef.current.currentTime -= 15;
+    }
   };
   
   const handlePrevious = () => {
