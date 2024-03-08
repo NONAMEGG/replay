@@ -16,7 +16,6 @@ const Main = ({ trackIndex, setTrackIndex, currentTrack, setCurrentTrack }) => {
             <h3>{tracks[tracks.indexOf(element)].title}</h3><h5>{tracks[tracks.indexOf(element)].author}</h5></div></div>)
             
         })
-        console.log(tracks_content)
         
     
     return (
