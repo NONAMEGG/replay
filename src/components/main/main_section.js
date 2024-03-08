@@ -10,7 +10,7 @@ const Main = ({ trackIndex, setTrackIndex, currentTrack, setCurrentTrack }) => {
         setCurrentTrack(tracks[index])
     }
 
-        const tracks_content = tracks.map((element) => {
+        const tracks_content = tracks?.map((element) => {
             return (<div onClick={() => changeTrack(tracks.indexOf(element))} className='track_wrapper'><img src={tracks[tracks.indexOf(element)].thumbnail}
             className = 'content'></img> <div className='meta_wrapper'>
             <h3>{tracks[tracks.indexOf(element)].title}</h3><h5>{tracks[tracks.indexOf(element)].author}</h5></div></div>)
