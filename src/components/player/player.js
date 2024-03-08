@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
-import { useRef, useState } from 'react';
-import { tracks } from '../data/tracks';
+import { useRef, useState } from 'react'
+import { tracks } from '../data/tracks'
 import './style.css'
 
 const Controls = React.lazy(() => import('./controls'))
@@ -9,17 +9,20 @@ const ProgressBar = React.lazy(() => import('./progressbar'))
 
 
 const Player =({active, setActive}) => {
-    const [trackIndex, setTrackIndex] = useState(0);
+    const [trackIndex, setTrackIndex] = useState(0)
     const audioRef = useRef()
-    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
-    const progressBarRef = useRef();
+    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex])
+    const progressBarRef = useRef()
 
-    const [timeProgress, setTimeProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
+    const [timeProgress, setTimeProgress] = useState(0)
+  const [duration, setDuration] = useState(0)
     return (
         <>
             <div className="player__container">
-            <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration }}></ProgressBar>
+            <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration, tracks,
+  trackIndex,
+  setTrackIndex,
+  setCurrentTrack }}></ProgressBar>
 
                 <div className="player">
                     <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef, active, setActive }}/> 

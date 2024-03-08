@@ -1,5 +1,5 @@
 import './style.css'
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 
 
@@ -9,90 +9,91 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
   setTrackIndex,
   setCurrentTrack }) => {
 
-    const [volume, setVolume] = useState(60);
+    const [volume, setVolume] = useState(60)
   
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false)
   const togglePlayPause = () => {
-    setIsPlaying((prev) => !prev);
+    setIsPlaying((prev) => !prev)
   }
 
-  const [muteVolume, setMuteVolume] = useState(false);
+  const [muteVolume, setMuteVolume] = useState(false)
 
   const repeat = useCallback(() => {
     if (audioRef.current) {
 
-    const currentTime = audioRef.current.currentTime;
-    setTimeProgress(currentTime);
-    progressBarRef.current.value = currentTime;
+    const currentTime = audioRef.current.currentTime
+    setTimeProgress(currentTime)
+    progressBarRef.current.value = currentTime
     progressBarRef.current.style.setProperty(
       '--range-progress',
       `${(progressBarRef.current.value / duration) * 100}%`
-    );
+    )
 
-    playAnimationRef.current = requestAnimationFrame(repeat);
+    if (((currentTime / duration) * 100) == 100) {
+      if (trackIndex >= tracks.length - 1) {
+        setTrackIndex(0)
+        setCurrentTrack(tracks[0])
+      } else {
+        setTrackIndex((prev) => prev + 1)
+        setCurrentTrack(tracks[trackIndex + 1])
+      }
     }
-  }, [audioRef, duration, progressBarRef, setTimeProgress]);
+      
 
+    playAnimationRef.current = requestAnimationFrame(repeat)
+    }
+  }, [audioRef, duration, progressBarRef, setTimeProgress])
+
+  const playAnimationRef = useRef()
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current.play();
+      audioRef.current.play()
     } else {
-      audioRef.current.pause();
+      audioRef.current.pause()
     }
-  }, [isPlaying, audioRef]);
-
-  const playAnimationRef = useRef();
-
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-    playAnimationRef.current = requestAnimationFrame(repeat);
-  }, [isPlaying, audioRef, repeat]);
-
+    playAnimationRef.current = requestAnimationFrame(repeat)
+  }, [isPlaying, audioRef, repeat])
   
   const skipForward = () => {
     if (audioRef.current) {
-      audioRef.current.currentTime += 15;
+      audioRef.current.currentTime += 15
 
     }
-  };
+  }
   
   const skipBackward = () => {
     if (audioRef.current) {
-      audioRef.current.currentTime -= 15;
+      audioRef.current.currentTime -= 15
     }
-  };
+  }
   
   const handlePrevious = () => {
     if (trackIndex === 0) {
-      let lastTrackIndex = tracks.length - 1;
-      setTrackIndex(lastTrackIndex);
-      setCurrentTrack(tracks[lastTrackIndex]);
+      let lastTrackIndex = tracks.length - 1
+      setTrackIndex(lastTrackIndex)
+      setCurrentTrack(tracks[lastTrackIndex])
     } else {
-      setTrackIndex((prev) => prev - 1);
-      setCurrentTrack(tracks[trackIndex - 1]);
+      setTrackIndex((prev) => prev - 1)
+      setCurrentTrack(tracks[trackIndex - 1])
     }
-  };
+  }
 
   const handleNext = () => {
     if (trackIndex >= tracks.length - 1) {
-      setTrackIndex(0);
-      setCurrentTrack(tracks[0]);
+      setTrackIndex(0)
+      setCurrentTrack(tracks[0])
     } else {
-      setTrackIndex((prev) => prev + 1);
-      setCurrentTrack(tracks[trackIndex + 1]);
+      setTrackIndex((prev) => prev + 1)
+      setCurrentTrack(tracks[trackIndex + 1])
     }
-  };
+  }
 
   useEffect(() => {
     if (audioRef) {
-      audioRef.current.volume = volume / 100;
+      audioRef.current.volume = volume / 100
     }
-  }, [volume, audioRef]);
+  }, [volume, audioRef])
 
   return (
     <div className="controls_wrapper">
@@ -130,8 +131,8 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
       </div>
       
     </div>
-  );
-};
+  )
+}
 
 
-export default Controls;
+export default Controls

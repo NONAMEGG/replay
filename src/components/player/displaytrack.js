@@ -1,15 +1,15 @@
 import './style.css'
 import '../Popup/popup.js'
-import { useState } from 'react';
+import { useState } from 'react'
 
 
 const DisplayTrack = ( { currentTrack, audioRef, setDuration, progressBarRef, active, setActive } ) => {
 
   const onLoadedMetadata = () => {
-    const seconds = audioRef.current.duration;
-    setDuration(seconds);
-    progressBarRef.current.max = seconds;
-  };
+    const seconds = audioRef.current.duration
+    setDuration(seconds)
+    progressBarRef.current.max = seconds
+  }
 
   const changeState =() => {
     setActive((prev) => !prev)
