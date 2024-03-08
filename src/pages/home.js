@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import {useState} from 'react'
+import {tracks} from '../components/data/tracks'
 
 const Header = React.lazy(() => import('../components/header'))
 const Player = React.lazy(() => import('../components/player/player'))
@@ -8,15 +9,23 @@ const Main = React.lazy(() => import('../components/main/main_section'))
 
 const Home =() => {
   const [popupActive, setPopupActive] = useState(true)
+
+  const [trackIndex, setTrackIndex] = useState(0)
+  const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex])
+
+
     return (
         <>
         <Popup active={popupActive} setActive={setPopupActive} />
         <Suspense fallback={<div>Loading/////</div>}>
         <Header></Header>
         </Suspense>
-        <Main></Main>
+        <Main trackIndex={trackIndex} setTrackIndex={setTrackIndex}
+          currentTrack={currentTrack} setCurrentTrack={setCurrentTrack}></Main>
         <Suspense fallback={<div>Loading/////</div>}>
-        <Player active={popupActive} setActive={setPopupActive}></Player>
+        <Player active={popupActive} setActive={setPopupActive}
+         trackIndex={trackIndex} setTrackIndex={setTrackIndex}
+          currentTrack={currentTrack} setCurrentTrack={setCurrentTrack}></Player>
         </Suspense>
     </>
     )

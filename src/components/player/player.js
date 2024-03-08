@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
-import { useRef, useState } from 'react'
-import { tracks } from '../data/tracks'
+import { useRef, useState } from 'react';
+import { tracks } from '../data/tracks';
 import './style.css'
 
 const Controls = React.lazy(() => import('./controls'))
@@ -8,10 +8,9 @@ const DisplayTrack = React.lazy(() => import('./displaytrack'))
 const ProgressBar = React.lazy(() => import('./progressbar'))
 
 
-const Player =({active, setActive}) => {
-    const [trackIndex, setTrackIndex] = useState(0)
+const Player =({active, setActive, trackIndex, setTrackIndex, currentTrack, setCurrentTrack}) => {
     const audioRef = useRef()
-    const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex])
+
     const progressBarRef = useRef()
 
     const [timeProgress, setTimeProgress] = useState(0)
