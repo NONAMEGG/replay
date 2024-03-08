@@ -14,4 +14,11 @@ export const tracks =
         thumbnail: '/trackdir/Снимок экрана 2024-01-23 181609 — копия (18).png'
     },
 
+    {
+        title: '$maM',
+        src: '/trackdir/$maM.mp3',
+        author: 'smam',
+        thumbnail: '/trackdir/Снимок экрана 2024-01-23 181609 — копия (18).png'
+    }
+
 ]
