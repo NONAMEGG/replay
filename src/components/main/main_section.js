@@ -9,12 +9,6 @@ const Main = ({ trackIndex, setTrackIndex, currentTrack, setCurrentTrack }) => {
         setTrackIndex(index)
         setCurrentTrack(tracks[index])
     }
-        // var output = ``
-        // tracks.forEach(element => {
-        //     output += `<div class='track_wrapper'><img src="${element.thumbnail}"
-        //     class = 'content'></img> <div class='meta_wrapper'><h3>${element.title}</h3><h5>${element.author}</h5></div></div>`
-            
-        // })
 
         const tracks_content = tracks.map((element) => {
             return (<div onClick={() => changeTrack(tracks.indexOf(element))} className='track_wrapper'><img src={tracks[tracks.indexOf(element)].thumbnail}
@@ -23,16 +17,6 @@ const Main = ({ trackIndex, setTrackIndex, currentTrack, setCurrentTrack }) => {
             
         })
         console.log(tracks_content)
-
-        
-
-        const renderContent =() => {
-            return (
-                <>
-                    
-                </>
-            )
-        }
         
     
     return (
