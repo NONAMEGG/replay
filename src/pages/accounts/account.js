@@ -1,8 +1,18 @@
 import React, { Suspense } from 'react'
 import './account.css'
-//import ./dataAccount
+import info from '../accountInfo.json'
 
 const Header = React.lazy(() => import('../../components/header'))
+
+const funcPreferences = (preferences) =>{
+    let array_preferences = preferences.split(" ")
+    let string_preferences = ""
+    array_preferences.forEach(element => {
+        string_preferences += element + ", "
+    });
+    string_preferences = string_preferences.substring(0, string_preferences.length - 2)
+    return string_preferences;
+};
 
 const Account =() => {
     return (
@@ -14,9 +24,9 @@ const Account =() => {
             <div className='accountComplex'>
                 <img className='accountImage' src='https://sportishka.com/uploads/posts/2022-11/1667480319_11-sportishka-com-p-dzhon-skala-vkontakte-11.jpg'/>
                 <div className='accountInfo'>
-                    <p className='accountText'>Никнейм: {"Dwayne Johnson"}</p>
-                    <p className='accountText'>Полных лет: {"Year"} </p>
-                    <p className='accountText'>Любимые категории музыки: {"Array favorite music"}</p>
+                    <p className='accountText'>Никнейм: {info.nickName}</p>
+                    <p className='accountText'>Дата рождения: {info.Date_of_birth} </p>
+                    <p className='accountText'>Предпочтения: {funcPreferences(info.preferences)}</p>
                 </div>
             </div>
             <p className='accountTextMain'>Альбомы</p>
