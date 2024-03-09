@@ -17,6 +17,11 @@ const Home =() => {
 
     return (
         <>
+        <input type="text" placeholder='title'/>
+        <input type="text" placeholder='src'/>
+        <input type="text" placeholder='author'/>
+        <input type="text" placeholder='srthumbnaillink'/>
+        <input type="button" value="submit" />
         <Popup active={popupActive} setActive={setPopupActive} />
         <Suspense fallback={<div>Loading/////</div>}>
         <Header></Header>
