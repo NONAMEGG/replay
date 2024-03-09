@@ -7,11 +7,10 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
   trackIndex,
   setTrackIndex,
-  setCurrentTrack }) => {
+  setCurrentTrack, isPlaying, setIsPlaying }) => {
 
     const [volume, setVolume] = useState(60)
   
-  const [isPlaying, setIsPlaying] = useState(false)
   const togglePlayPause = () => {
     setIsPlaying((prev) => !prev)
   }

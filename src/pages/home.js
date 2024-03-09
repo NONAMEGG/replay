@@ -12,6 +12,7 @@ const Home =() => {
 
   const [trackIndex, setTrackIndex] = useState(0)
   const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex])
+  const [isPlaying, setIsPlaying] = useState(false)
 
 
     return (
@@ -20,12 +21,12 @@ const Home =() => {
         <Suspense fallback={<div>Loading/////</div>}>
         <Header></Header>
         </Suspense>
-        <Main trackIndex={trackIndex} setTrackIndex={setTrackIndex}
-          currentTrack={currentTrack} setCurrentTrack={setCurrentTrack}></Main>
+        <Main setTrackIndex={setTrackIndex}
+           setCurrentTrack={setCurrentTrack} setIsPlaying={setIsPlaying}></Main>
         <Suspense fallback={<div>Loading/////</div>}>
         <Player active={popupActive} setActive={setPopupActive}
          trackIndex={trackIndex} setTrackIndex={setTrackIndex}
-          currentTrack={currentTrack} setCurrentTrack={setCurrentTrack}></Player>
+          currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} isPlaying={isPlaying} setIsPlaying={setIsPlaying}></Player>
         </Suspense>
     </>
     )

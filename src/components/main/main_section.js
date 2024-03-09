@@ -4,10 +4,11 @@ import { tracks } from '../data/tracks'
 
 
 
-const Main = ({ trackIndex, setTrackIndex, currentTrack, setCurrentTrack }) => {
+const Main = ({  setTrackIndex, setCurrentTrack, setIsPlaying }) => {
     const changeTrack = (index) => {
         setTrackIndex(index)
         setCurrentTrack(tracks[index])
+        setIsPlaying((prev) => true)
     }
 
         const tracks_content = tracks?.map((element) => {
