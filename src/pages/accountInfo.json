@@ -3,7 +3,7 @@
     "preferences" : "ZZZ XXX CCC VVV BBB",
     "nickName" : "Dwayne Johnson",
     "Date_of_birth" : "18.11.2004",
-    "favoriteAlbum" : "id?",
+    "favoriteAlbum" : ["id?", "id?", "id?", "id?"],
     "id" : "0",
     "Log_In" : false
 }
