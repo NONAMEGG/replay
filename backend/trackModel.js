@@ -32,10 +32,10 @@ const getTracks = async () => {
 //create a new track record in the databsse
 const createTracks = (body) => {
   return new Promise(function (resolve, reject) {
-    const { src, author } = body;
+    const { title, src, author, thumbnlnk } = body;
     pool.query(
-      "INSERT INTO tracks (src, author) VALUES ($1, $2) RETURNING *",
-      [src, author],
+      "INSERT INTO tracks (title, src, author, thumbnail) VALUES ($1, $2, $3, $4) RETURNING *",
+      [title, src, author, thumbnlnk],
       (error, results) => {
         if (error) {
           reject(error);
