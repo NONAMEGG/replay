@@ -13,8 +13,7 @@ const logined = async () =>{
             accountInfo.forEach(element2 => {
                 if(element2.Login === login && element2.password === password){
                     element2.Log_In = true
-                    //return `<Link to="/"></Link>`
-                    //help telepot on main page
+                    
                 }
             });
         }

@@ -5,5 +5,5 @@
     "Date_of_birth" : "18.11.2004",
     "favoriteAlbum" : ["id?", "id?", "id?", "id?"],
     "id" : "0",
-    "Log_In" : false
+    "Log_In" : true
 }
