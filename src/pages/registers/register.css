@@ -73,6 +73,9 @@
 .Checkboxs:active{
     background-color: #FFB4A2;
 }
+.Checkboxs:focus{
+    background-color: #FFB4A2;
+}
 .button_register{
     padding: 20px 50px 20px 50px;
     background-color: #FFB4A2;
