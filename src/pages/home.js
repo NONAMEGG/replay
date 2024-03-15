@@ -1,7 +1,6 @@
-import React, { Suspense, useEffect } from 'react'
-import {useState} from 'react'
+import React, { Suspense, useEffect, useState} from 'react'
 import {tracks} from '../components/data/tracks'
-import { supabase } from '../lib/supabaseClient'
+import { supabase } from './lib/supabaseClient'
 import '../App.css'
 
 const Header = React.lazy(() => import('../components/header'))
@@ -32,8 +31,6 @@ const Home =() => {
 
     fatchAccounts()
   }, [])
-
-
 
   const [popupActive, setPopupActive] = useState(true)
 
@@ -78,25 +75,6 @@ const Home =() => {
 
 
   }
-
-  const [formError, setFormError] = useState(null)
-  const [title, setTtitle] = useState('')
-  const [src, setSrc] = useState('')
-  const [author, setAuthor] = useState('')
-  const [thumbnaillink, setThumbnaillink] = useState('')
-
-
-  const handlTreckSubmit = async (e) =>{
-    e.preventDefault()
-
-    if (!title || !src || !author || !thumbnaillink){
-      setFormError('Please cheack filling in the music fields')
-      return
-    }
-
-    console.log(title, src, author, thumbnaillink)
-  }
-
     return (
         <>
 
@@ -110,44 +88,6 @@ const Home =() => {
           </div>
         )}
         {/* TEST */}
-
-        <form onSubmit={handlTreckSubmit}>
-          <input 
-            id = 'title'
-            type = 'text'
-            placeholder='title'
-            value={title}
-            onChange={(e) => setTtitle(e.target.value)}
-          />
-          <input 
-            id = 'src'
-            type = 'text'
-            placeholder='src'
-            value={src}
-            onChange={(e) => setSrc(e.target.value)}
-          />
-          <input 
-            id = 'author'
-            type = 'text'
-            placeholder='author'
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-          <input 
-            id = 'thumbnaillink'
-            type = 'text'
-            placeholder='thumbnaillink'
-            value={thumbnaillink}
-            onChange={(e) => setThumbnaillink(e.target.value)}
-          />
-
-          <button>Download</button>
-
-          {formError && <p>{formError}</p>}
-        </form>
-
-        {/* <input type="button" value="submit" onClick={addTracks}/> */}
-
         <Popup active={popupActive} setActive={setPopupActive} />
         <Suspense fallback={<div>Loading/////</div>}>
         <Header></Header>
