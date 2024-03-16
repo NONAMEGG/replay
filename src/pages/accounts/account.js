@@ -13,6 +13,8 @@ const Account =() => {
     const [src, setSrc] = useState('')
     const [author, setAuthor] = useState('')
     const [thumbnaillink, setThumbnaillink] = useState('')
+    const [musicFile, setmusicFile] = useState(null)
+    const [imageFile, setimageFile] = useState(null)
 
     const handlTreckSubmit = async (e) =>{
         e.preventDefault()
@@ -26,13 +28,28 @@ const Account =() => {
             const{ data, error } = await supabase
             .storage
             .from('music')
-            .upload(title, src, author) // надо поменять название файла + сохраняется какого-то хуйя путь блять к файлу
+            .upload(musicFile) // надо поменять название файла + сохраняется какого-то хуйя путь блять к файлу
             const{ data2, error2 } = await supabase
             .storage
             .from('images')
-            .upload(thumbnaillink)
+            .upload(imageFile)
         }
-      
+
+        const newFiles = async () =>{
+            var element = document.GetElementById('title');
+            var file = element.files[0];
+            var blob = file.slice(0, file.size, 'audio/mpeg'); 
+            var newFile = new File([blob], title + ' - ' + author + '.mp3', {type: 'audio/mpeg'});
+            setmusicFile(newFile)
+
+            var element = document.GetElementById('thumbnaillink');
+            var file = element.files[0];
+            var blob = file.slice(0, file.size, 'image/png'); 
+            newFile = new File([blob], title + ' - ' + author + '.png', {type: 'image/png'});
+            setimageFile(newFile)
+        }
+
+        newFiles()
         donwloadSupabase()
         setFormError('')
         console.log(title, src, author, thumbnaillink)
