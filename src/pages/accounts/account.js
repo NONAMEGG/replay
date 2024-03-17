@@ -33,26 +33,35 @@ const Account =() => {
             .storage
             .from('images')
             .upload(imageFile)
-        }
+        }   
 
         const newFiles = async () =>{
-            var element = document.GetElementById('title');
+            var element = document.getElementById('src');
             var file = element.files[0];
+            console.log(file)
             var blob = file.slice(0, file.size, 'audio/mpeg'); 
+            console.log(blob)
             var newFile = new File([blob], title + ' - ' + author + '.mp3', {type: 'audio/mpeg'});
             setmusicFile(newFile)
 
-            var element = document.GetElementById('thumbnaillink');
+            console.log("------------------")
+
+            var element = document.getElementById('thumbnaillink');
             var file = element.files[0];
+            console.log(file)
             var blob = file.slice(0, file.size, 'image/png'); 
+            console.log(blob)
             newFile = new File([blob], title + ' - ' + author + '.png', {type: 'image/png'});
             setimageFile(newFile)
         }
 
         newFiles()
         donwloadSupabase()
+        console.log("--------a---------")
         setFormError('')
+        console.log("--------b---------")
         console.log(title, src, author, thumbnaillink)
+        console.log("--------c---------")
     }
 
     const funcPreferences = (preferences) =>{
