@@ -13,8 +13,6 @@ const Account =() => {
     const [src, setSrc] = useState('')
     const [author, setAuthor] = useState('')
     const [thumbnaillink, setThumbnaillink] = useState('')
-    const [musicFile, setmusicFile] = useState(null)
-    const [imageFile, setimageFile] = useState(null)
 
     const handlTreckSubmit = async (e) =>{
         e.preventDefault()
@@ -23,45 +21,29 @@ const Account =() => {
             setFormError('Please cheack filling in the music fields')
             return
         }
-
         const donwloadSupabase = async () => {
-            const{ data, error } = await supabase
-            .storage
-            .from('music')
-            .upload(musicFile) // надо поменять название файла + сохраняется какого-то хуйя путь блять к файлу
-            const{ data2, error2 } = await supabase
-            .storage
-            .from('images')
-            .upload(imageFile)
+            var fileMusic = document.getElementById('src')
+            fileMusic = fileMusic.files[0]
+            if (fileMusic){
+                const{ data, error } = await supabase.storage.from('music').upload(title + ' - ' + author + '.mp3', fileMusic)
+                if (error.error == 'Duplicate') {
+                    setFormError('Такой файл уже существует, пожалуйста поменяйте название музыки или имя автора')
+                    //return
+                }
+            }
+
+            var fileImage = document.getElementById('thumbnaillink')
+            fileImage = fileImage.files[0]
+            if (fileImage){
+                const{ data, error } = await supabase.storage.from('images').upload(title + ' - ' + author + '.jpg', fileImage)
+                if (error.error == 'Duplicate') {
+                    setFormError('Такой файл уже существует, пожалуйста поменяйте название музыки или имя автора')
+                }
+            }
         }   
 
-        const newFiles = async () =>{
-            var element = document.getElementById('src');
-            var file = element.files[0];
-            console.log(file)
-            var blob = file.slice(0, file.size, 'audio/mpeg'); 
-            console.log(blob)
-            var newFile = new File([blob], title + ' - ' + author + '.mp3', {type: 'audio/mpeg'});
-            setmusicFile(newFile)
-
-            console.log("------------------")
-
-            var element = document.getElementById('thumbnaillink');
-            var file = element.files[0];
-            console.log(file)
-            var blob = file.slice(0, file.size, 'image/png'); 
-            console.log(blob)
-            newFile = new File([blob], title + ' - ' + author + '.png', {type: 'image/png'});
-            setimageFile(newFile)
-        }
-
-        newFiles()
         donwloadSupabase()
-        console.log("--------a---------")
         setFormError('')
-        console.log("--------b---------")
-        console.log(title, src, author, thumbnaillink)
-        console.log("--------c---------")
     }
 
     const funcPreferences = (preferences) =>{
@@ -103,8 +85,6 @@ const Account =() => {
                         <input className='forDownloadMusic'
                             id = 'src'
                             type = 'file'
-                            placeholder='src'
-                            value={src}
                             onChange={(e) => setSrc(e.target.value)}
                         />
                         <input className='forDownloadMusic'
@@ -118,8 +98,6 @@ const Account =() => {
                         <input className='forDownloadMusic'
                             id = 'thumbnaillink'
                             type = 'file'
-                            placeholder='thumbnaillink'
-                            value={thumbnaillink}
                             onChange={(e) => setThumbnaillink(e.target.value)}
                         />
                         <button className='buutonDownloadMusic'>Download</button>
