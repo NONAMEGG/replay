@@ -1,23 +1,10 @@
 import React, { Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import './login.css'
-import users from '../accountLogin.json' //array logins
-import accountInfo from '../accountLogin.json'
 
 
 const logined = async () =>{
-    let login = document.getElementById("#login").value //works
-    let password = document.getElementById("#password").value //works
-    users.forEach(element => {
-        if (element.Login === login && element.password === password){
-            accountInfo.forEach(element2 => {
-                if(element2.Login === login && element2.password === password){
-                    element2.Log_In = true
-                    
-                }
-            });
-        }
-    });
+    
 }
 const Login =() => {
     return (

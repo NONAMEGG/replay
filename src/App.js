@@ -26,12 +26,24 @@ const router = createBrowserRouter(
 )
 
 function App() {
-  return(
-    <>
-    <RouterProvider router={router}></RouterProvider>
-    </>
-  ) 
+  useEffect(() => {
+    const checkFile = async () => {
+      try {
+        await import("./pages/accountInfo.json");
+        router.navigate('/');
+      } catch (err) {
+        router.navigate('/login');
+      }
+    };
 
+    checkFile();
+  }, []);
+
+  return (
+    <>
+      <RouterProvider router={router}></RouterProvider>
+    </>
+  );
 }
 
-export default App
+export default App;
